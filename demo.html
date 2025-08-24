@@ -1,0 +1,1469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- <script src="https://static.readdy.ai/static/e.js"></script> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deshadan Resorts & Hotels - Luxury Resort Experiences</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#800020',
+                        secondary: '#DAA520'
+                    },
+                    borderRadius: {
+                        'none': '0px',
+                        'sm': '4px',
+                        DEFAULT: '8px',
+                        'md': '12px',
+                        'lg': '16px',
+                        'xl': '20px',
+                        '2xl': '24px',
+                        '3xl': '32px',
+                        'full': '9999px',
+                        'button': '8px'
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Pacifico&family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" rel="stylesheet">
+    <style>
+        :where([class^="ri-"])::before {
+            content: "\f3c2";
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(128, 0, 32, 0.3), rgba(128, 0, 32, 0.3)), url('https://readdy.ai/api/search-image?query=luxury%20tropical%20resort%20with%20infinity%20pool%20overlooking%20pristine%20beach%20at%20golden%20hour%2C%20palm%20trees%20swaying%20in%20gentle%20breeze%2C%20elegant%20architecture%20blending%20with%20natural%20landscape%2C%20serene%20turquoise%20waters%2C%20sophisticated%20hospitality%20design%2C%20warm%20ambient%20lighting%2C%20premium%20vacation%20destination&width=1920&height=1080&seq=hero-main&orientation=landscape');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .property-card {
+            transition: all 0.3s ease;
+        }
+
+        .property-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .property-card:hover .overlay {
+            opacity: 0.8;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body class="smooth-scroll">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0">
+                    <!-- <h1 class="text-2xl font-['Pacifico'] text-white">Deshadan</h1> -->
+                    <img src="./assets/logo-white.png">
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home"
+                            class="text-white hover:text-secondary transition-colors duration-300 font-medium">Home</a>
+                        <a href="#hotels"
+                            class="text-white hover:text-secondary transition-colors duration-300 font-medium">Hotels &
+                            Resorts</a>
+                        <a href="#events"
+                            class="text-white hover:text-secondary transition-colors duration-300 font-medium">Meetings
+                            & Events</a>
+                        <a href="#brochure"
+                            class="text-white hover:text-secondary transition-colors duration-300 font-medium">E-Brochure</a>
+                        <a href="#contact"
+                            class="text-white hover:text-secondary transition-colors duration-300 font-medium">Contact</a>
+                        <a href="#about"
+                            class="text-white hover:text-secondary transition-colors duration-300 font-medium">About</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <button
+                        class="bg-secondary text-primary px-6 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                        Book Now
+                    </button>
+                </div>
+                <div class="md:hidden">
+                    <button class="text-white" id="mobile-menu-btn">
+                        <div class="w-6 h-6 flex items-center justify-center">
+                            <i class="ri-menu-line ri-lg"></i>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 bg-primary">
+                <a href="#home" class="text-white block px-3 py-2 text-base font-medium">Home</a>
+                <a href="#hotels" class="text-white block px-3 py-2 text-base font-medium">Hotels & Resorts</a>
+                <a href="#events" class="text-white block px-3 py-2 text-base font-medium">Meetings & Events</a>
+                <a href="#brochure" class="text-white block px-3 py-2 text-base font-medium">E-Brochure</a>
+                <a href="#contact" class="text-white block px-3 py-2 text-base font-medium">Contact</a>
+                <a href="#about" class="text-white block px-3 py-2 text-base font-medium">About</a>
+                <button
+                    class="bg-secondary text-primary px-6 py-2 !rounded-button font-semibold mx-3 mt-2 whitespace-nowrap">
+                    Book Now
+                </button>
+            </div>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://static.readdy.ai/image/30e70cf5115172d31998aa4e963fa4df/0cf1c479d3833ea48a7116be2849ee87.png');
+            background-size: cover;
+            background-position: center;
+            animation: scaleIn 1.5s ease-out forwards;
+        }
+
+        @keyframes scaleIn {
+            from {
+                transform: scale(1.1);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            animation: fadeIn 1s ease-out 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                transform: translateY(20px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+    </style>
+    <section id="home" class="hero-bg min-h-screen flex items-center justify-center text-white">
+        <div class="hero-content text-center max-w-4xl mx-auto px-4">
+            <h1 class="text-5xl md:text-7xl font-['Playfair_Display'] font-bold mb-6 leading-tight text-white">
+                Experience Luxury<br>
+                <span class="text-secondary">Beyond Imagination</span>
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 font-light max-w-2xl mx-auto text-stone-100">
+                Discover exceptional hospitality across Kerala's most breathtaking destinations, where traditional
+                elegance meets modern luxury.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button
+                    class="bg-secondary text-primary px-8 py-4 !rounded-button font-semibold text-lg hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                    Explore Properties
+                </button>
+                <button
+                    class="border-2 border-white text-white px-8 py-4 !rounded-button font-semibold text-lg hover:bg-white hover:text-primary transition-colors duration-300 whitespace-nowrap">
+                    Watch Video
+                </button>
+            </div>
+        </div>
+    </section>
+    <!-- Welcome Section -->
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                        Welcome to Deshadan
+                    </h2>
+                    <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                        For over two decades, Deshadan Resorts & Hotels has been synonymous with exceptional hospitality
+                        and authentic experiences across South India. Our collection of premium properties spans from
+                        the serene backwaters of Kerala to the majestic hills of Munnar, each offering a unique blend of
+                        luxury and local culture.
+                    </p>
+                    <p class="text-lg text-stone-600 mb-8 leading-relaxed">
+                        We believe in creating memories that last a lifetime, where every guest is treated like family
+                        and every moment is crafted with care. Our commitment to sustainable tourism and community
+                        engagement ensures that your stay contributes positively to the destinations you visit.
+                    </p>
+                    <div class="flex items-center space-x-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">25+</div>
+                            <div class="text-stone-600">Years Experience</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">10+</div>
+                            <div class="text-stone-600">Premium Properties</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-primary">50K+</div>
+                            <div class="text-stone-600">Happy Guests</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="https://readdy.ai/api/search-image?query=elegant%20luxury%20resort%20lobby%20with%20traditional%20Kerala%20architecture%2C%20warm%20wooden%20interiors%2C%20comfortable%20seating%20areas%2C%20natural%20lighting%2C%20sophisticated%20hospitality%20design%2C%20premium%20amenities%2C%20welcoming%20atmosphere%2C%20cultural%20elements&width=600&height=400&seq=welcome-img&orientation=landscape"
+                        alt="Deshadan Resort Interior" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-secondary p-6 rounded-2xl">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <i class="ri-award-line ri-2x text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Properties Showcase -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Our Premium Properties
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Discover our collection of luxury resorts and hotels, each offering unique experiences across
+                    India's most beautiful destinations.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Property 1 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20backwater%20resort%20with%20traditional%20Kerala%20houseboats%2C%20serene%20lake%20views%2C%20coconut%20palm%20trees%2C%20wooden%20architecture%2C%20peaceful%20water%20reflections%2C%20tropical%20paradise%2C%20premium%20hospitality%2C%20sunset%20golden%20hour%20lighting&width=400&height=300&seq=backwater-resort&orientation=landscape"
+                            alt="Deshadan Backwater Resort"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan Backwater Resort</h3>
+                        <p class="text-stone-600 mb-2">Muhamma</p>
+                        <p class="text-sm text-stone-500">Experience tranquil backwater luxury</p>
+                    </div>
+                </div>
+                <!-- Property 2 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=eco-friendly%20mountain%20resort%20surrounded%20by%20lush%20green%20valleys%2C%20sustainable%20architecture%2C%20misty%20hills%2C%20tea%20plantations%2C%20nature%20conservation%2C%20premium%20eco-luxury%2C%20serene%20mountain%20landscape%2C%20environmentally%20conscious%20design&width=400&height=300&seq=ecovalley-resort&orientation=landscape"
+                            alt="Deshadan Ecovalley Resort"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan Ecovalley Resort</h3>
+                        <p class="text-stone-600 mb-2">Kanthalloor</p>
+                        <p class="text-sm text-stone-500">Sustainable luxury in nature's embrace</p>
+                    </div>
+                </div>
+                <!-- Property 3 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=dramatic%20cliff-top%20resort%20overlooking%20pristine%20beach%2C%20luxury%20villas%20perched%20on%20rocky%20cliffs%2C%20azure%20ocean%20views%2C%20infinity%20pools%2C%20sophisticated%20coastal%20architecture%2C%20golden%20sunset%2C%20premium%20beachfront%20hospitality&width=400&height=300&seq=cliff-beach-resort&orientation=landscape"
+                            alt="Deshadan Cliff & Beach Resort"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan Cliff & Beach Resort</h3>
+                        <p class="text-stone-600 mb-2">Varkala</p>
+                        <p class="text-sm text-stone-500">Clifftop luxury meets pristine beaches</p>
+                    </div>
+                </div>
+                <!-- Property 4 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20mountain%20resort%20nestled%20in%20misty%20hills%2C%20tea%20plantation%20views%2C%20colonial%20architecture%2C%20rolling%20green%20mountains%2C%20premium%20hill%20station%20hospitality%2C%20cool%20mountain%20air%2C%20elegant%20retreat%20atmosphere&width=400&height=300&seq=mountain-resort&orientation=landscape"
+                            alt="Deshadan Mountain Resort"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan Mountain Resort</h3>
+                        <p class="text-stone-600 mb-2">Munnar</p>
+                        <p class="text-sm text-stone-500">Misty mountains and tea garden views</p>
+                    </div>
+                </div>
+                <!-- Property 5 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=traditional%20Chettinad%20heritage%20hotel%20with%20ornate%20architecture%2C%20carved%20wooden%20pillars%2C%20vintage%20courtyards%2C%20cultural%20heritage%20design%2C%20antique%20furnishings%2C%20royal%20palace%20ambiance%2C%20historical%20luxury%20hospitality&width=400&height=300&seq=chettinad-packer&orientation=landscape"
+                            alt="Chettinad Packer"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Chettinadu Mansion</h3>
+                        <p class="text-stone-600 mb-2">Kanadukathan</p>
+                        <p class="text-sm text-stone-500">Heritage luxury in historic mansion</p>
+                    </div>
+                </div>
+                <!-- Property 6 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=elegant%20heritage%20court%20hotel%20with%20traditional%20Tamil%20architecture%2C%20grand%20entrance%2C%20cultural%20motifs%2C%20vintage%20luxury%2C%20ornate%20interiors%2C%20historical%20charm%2C%20premium%20heritage%20hospitality%20experience&width=400&height=300&seq=chettinadu-court&orientation=landscape"
+                            alt="Chettinadu Court"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Chettinadu Court</h3>
+                        <p class="text-stone-600 mb-2">Kanadukathan</p>
+                        <p class="text-sm text-stone-500">Royal heritage meets modern comfort</p>
+                    </div>
+                </div>
+                <!-- Property 7 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20beach%20villas%20with%20private%20pools%2C%20pristine%20sandy%20beach%2C%20coconut%20palms%2C%20turquoise%20waters%2C%20exclusive%20beachfront%20accommodation%2C%20tropical%20paradise%2C%20premium%20villa%20hospitality%2C%20serene%20coastal%20luxury&width=400&height=300&seq=tarangi-villas&orientation=landscape"
+                            alt="Deshadan's Tarangi Beach Villas"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan's Tarangi Beach Villas</h3>
+                        <p class="text-stone-600 mb-2">Mararikulam</p>
+                        <p class="text-sm text-stone-500">Private beach villas with exclusive luxury</p>
+                    </div>
+                </div>
+                <!-- Property 8 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=grand%20heritage%20hotel%20with%20Chola%20dynasty%20architecture%2C%20majestic%20temple-inspired%20design%2C%20cultural%20luxury%2C%20traditional%20South%20Indian%20hospitality%2C%20ornate%20pillars%2C%20royal%20ambiance%2C%20historical%20elegance&width=400&height=300&seq=deshadan-chola&orientation=landscape"
+                            alt="Deshadan Chola"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan Chola</h3>
+                        <p class="text-stone-600 mb-2">Thanjavur</p>
+                        <p class="text-sm text-stone-500">Imperial luxury in temple city</p>
+                    </div>
+                </div>
+                <!-- Property 9 -->
+                <div class="property-card group cursor-pointer">
+                    <div class="relative overflow-hidden rounded-2xl">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20jungle%20resort%20with%20treehouse%20accommodations%2C%20dense%20forest%20canopy%2C%20wildlife%20sanctuary%2C%20eco-luxury%20design%2C%20natural%20wood%20architecture%2C%20adventure%20hospitality%2C%20pristine%20wilderness%2C%20sustainable%20forest%20retreat&width=400&height=300&seq=jungle-resort&orientation=landscape"
+                            alt="Deshadan Jungle"
+                            class="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div
+                            class="overlay absolute inset-0 bg-primary opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                            <div class="text-center text-white">
+                                <h3 class="text-xl font-semibold mb-2">Explore Resort</h3>
+                                <div class="w-8 h-8 flex items-center justify-center mx-auto">
+                                    <i class="ri-arrow-right-line ri-lg"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h3 class="text-xl font-semibold text-stone-800 mb-2">Deshadan Jungle – A New Forest Escape</h3>
+                        <p class="text-stone-600 mb-2">Kanthalloor</p>
+                        <p class="text-sm text-stone-500">New forest escape in pristine wilderness</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Video Gallery -->
+    <section class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Experience Our Resorts
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Take a virtual journey through our properties and discover the unique experiences that await you.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/hoixewQF1jQ?si=3Z5pw5CnzIZcTKuq" title="Deshadan Backwater Resort Experience"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+                
+                <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/mO1CTgu_FLQ" title="Deshadan Mountain Resort Munnar"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+                <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/75jXEfuGyag" title="Chettinad Heritage Hotels"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+                <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/Gk6fmun08k4" title="Deshadan Beach Resorts Collection"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+                <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/VhBwtzXWeOg" title="Deshadan Luxury Experience"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+                <div class="video-container rounded-2xl overflow-hidden shadow-2xl">
+                    <iframe src="https://www.youtube.com/embed/8aUaLQsA8jY" title="Deshadan Events &amp; Celebrations"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <!-- Location Map -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Find Us Across India
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Our properties are strategically located across South India's most beautiful destinations.
+                </p>
+            </div>
+            <div class="relative h-[450px] rounded-2xl overflow-hidden shadow-2xl">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3929.6242209562265!2d76.29101287464319!3d9.965189490138489!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b0872b7d1f3cf9d%3A0x19d66e84cc4bb3af!2sDeshadan%20Resorts%20%26%20Hotels%20(%20Corporate%20Office%20)!5e0!3m2!1sen!2sin!4v1755969806939!5m2!1sen!2sin"
+                    class="w-full h-full" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 bg-stone-50">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Book Your Stay
+                </h2>
+                <p class="text-xl text-stone-600">
+                    Reserve your luxury experience with us today.
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-2xl p-8">
+                <form class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Guest Name</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Enter your full name">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Email Address</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Enter your email">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Select Property</label>
+                        <div class="relative">
+                            <select
+                                class="w-full px-4 py-3 pr-8 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm appearance-none">
+                                <option>Choose your preferred property</option>
+                                <option>Deshadan Backwater Resort, Muhamma</option>
+                                <option>Deshadan Ecovalley Resort, Kanthalloor</option>
+                                <option>Deshadan Cliff & Beach Resort, Varkala</option>
+                                <option>Deshadan Mountain Resort, Munnar</option>
+                                <option>Chettinadu Mansion, Kanadukathan</option>
+                                <option>Chettinadu Court, Kanadukathan</option>
+                                <option>Chettinad packer, Kanadukathan</option>
+                                <option>Deshadan's Tarangi Beach Villas, Mararikulam</option>
+                                <option>Deshadan Chola, Thanjavur</option>
+                                <option>Deshadan Jungle – A New Forest Escape at Kanthalloor</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line text-stone-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Check-in Date</label>
+                            <input type="date"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Check-out Date</label>
+                            <input type="date"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Adults</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full px-4 py-3 pr-8 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm appearance-none">
+                                    <option>1 Adult</option>
+                                    <option>2 Adults</option>
+                                    <option>3 Adults</option>
+                                    <option>4 Adults</option>
+                                    <option>5+ Adults</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-arrow-down-s-line text-stone-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Children</label>
+                            <div class="relative">
+                                <select
+                                    class="w-full px-4 py-3 pr-8 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm appearance-none">
+                                    <option>0 Children</option>
+                                    <option>1 Child</option>
+                                    <option>2 Children</option>
+                                    <option>3 Children</option>
+                                    <option>4+ Children</option>
+                                </select>
+                                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                    <div class="w-5 h-5 flex items-center justify-center">
+                                        <i class="ri-arrow-down-s-line text-stone-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Special Requests</label>
+                        <textarea rows="4"
+                            class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Any special requirements or preferences..."></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-secondary text-primary px-8 py-4 !rounded-button font-semibold text-lg hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                        Check Availability & Book
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Hotels & Resorts Section -->
+    <section id="hotels" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Hotels & Resorts
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Explore our diverse portfolio of luxury accommodations, each designed to offer unique experiences
+                    that celebrate local culture and natural beauty.
+                </p>
+            </div>
+            <div class="space-y-16">
+                <!-- Featured Resort -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-['Playfair_Display'] font-bold text-stone-800 mb-4">Backwater Luxury
+                        </h3>
+                        <p class="text-lg text-stone-600 mb-6">
+                            Experience the serene beauty of Kerala's backwaters at our premium resorts. Wake up to the
+                            gentle lapping of water against traditional houseboats, enjoy authentic local cuisine, and
+                            immerse yourself in the tranquil rhythm of backwater life.
+                        </p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Traditional houseboat experiences
+                            </li>
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Authentic Kerala cuisine
+                            </li>
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Ayurvedic spa treatments
+                            </li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-red-900 transition-colors duration-300 whitespace-nowrap">
+                            Explore Backwater Resorts
+                        </button>
+                    </div>
+                    <div>
+                        <img src="https://static.readdy.ai/image/30e70cf5115172d31998aa4e963fa4df/02e529040a472cf57723177e482e902e.jfif"
+                            alt="Backwater Resort" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+                <!-- Mountain Resorts -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <img src="https://readdy.ai/api/search-image?query=luxury%20mountain%20resort%20in%20misty%20hills%2C%20tea%20plantation%20views%2C%20colonial%20architecture%2C%20rolling%20green%20mountains%2C%20premium%20hill%20station%20hospitality%2C%20cool%20mountain%20air%2C%20elegant%20retreat%20atmosphere%2C%20panoramic%20valley%20views&width=600&height=400&seq=mountain-feature&orientation=landscape"
+                            alt="Mountain Resort" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                    </div>
+                    <div class="order-1 lg:order-2">
+                        <h3 class="text-3xl font-['Playfair_Display'] font-bold text-stone-800 mb-4">Mountain Retreats
+                        </h3>
+                        <p class="text-lg text-stone-600 mb-6">
+                            Escape to the cool, misty hills of Munnar and Kanthalloor. Our mountain resorts offer
+                            breathtaking views of tea plantations, opportunities for nature walks, and the perfect
+                            setting for a romantic getaway or peaceful retreat.
+                        </p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Tea plantation tours
+                            </li>
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Nature trekking experiences
+                            </li>
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Panoramic valley views
+                            </li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-red-900 transition-colors duration-300 whitespace-nowrap">
+                            Discover Mountain Resorts
+                        </button>
+                    </div>
+                </div>
+                <!-- Heritage Hotels -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-['Playfair_Display'] font-bold text-stone-800 mb-4">Heritage Luxury
+                        </h3>
+                        <p class="text-lg text-stone-600 mb-6">
+                            Step into the grandeur of South India's royal past at our heritage properties. These
+                            meticulously restored palaces and mansions offer a glimpse into the region's rich cultural
+                            heritage while providing modern luxury amenities.
+                        </p>
+                        <ul class="space-y-2 mb-8">
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Restored heritage architecture
+                            </li>
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Cultural immersion programs
+                            </li>
+                            <li class="flex items-center text-stone-600">
+                                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                                    <i class="ri-check-line text-secondary"></i>
+                                </div>
+                                Traditional art and crafts
+                            </li>
+                        </ul>
+                        <button
+                            class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-red-900 transition-colors duration-300 whitespace-nowrap">
+                            Experience Heritage
+                        </button>
+                    </div>
+                    <div>
+                        <img src="https://readdy.ai/api/search-image?query=grand%20heritage%20hotel%20with%20traditional%20South%20Indian%20architecture%2C%20ornate%20carved%20pillars%2C%20vintage%20courtyards%2C%20cultural%20heritage%20design%2C%20antique%20furnishings%2C%20royal%20palace%20ambiance%2C%20historical%20luxury%20hospitality&width=600&height=400&seq=heritage-feature&orientation=landscape"
+                            alt="Heritage Hotel" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Meetings & Events Section -->
+    <section id="events" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Meetings & Events
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Create unforgettable corporate events, weddings, and celebrations in our stunning venues across
+                    South India.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-2xl mb-6">
+                        <i class="ri-presentation-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-stone-800 mb-4">Corporate Events</h3>
+                    <p class="text-stone-600 mb-6">
+                        State-of-the-art conference facilities with modern AV equipment, high-speed internet, and
+                        professional event coordination services.
+                    </p>
+                    <ul class="space-y-2 text-sm text-stone-600">
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Meeting rooms for 10-500 guests
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Advanced AV technology
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Dedicated event managers
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-2xl mb-6">
+                        <i class="ri-heart-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-stone-800 mb-4">Weddings</h3>
+                    <p class="text-stone-600 mb-6">
+                        Celebrate your special day in breathtaking locations with our comprehensive wedding planning
+                        services and romantic venues.
+                    </p>
+                    <ul class="space-y-2 text-sm text-stone-600">
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Beachfront & garden venues
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Complete wedding planning
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Customized menus
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-2xl mb-6">
+                        <i class="ri-calendar-event-line ri-2x"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-stone-800 mb-4">Social Events</h3>
+                    <p class="text-stone-600 mb-6">
+                        From intimate gatherings to grand celebrations, we provide the perfect setting for all your
+                        social events and milestones.
+                    </p>
+                    <ul class="space-y-2 text-sm text-stone-600">
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Birthday & anniversary parties
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Cultural celebrations
+                        </li>
+                        <li class="flex items-center">
+                            <div class="w-4 h-4 flex items-center justify-center mr-2">
+                                <i class="ri-check-line text-secondary"></i>
+                            </div>
+                            Flexible venue options
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl p-8 shadow-lg">
+                <h3 class="text-2xl font-semibold text-stone-800 mb-6 text-center">Event Inquiry Form</h3>
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Event Type</label>
+                        <div class="relative">
+                            <select
+                                class="w-full px-4 py-3 pr-8 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm appearance-none">
+                                <option>Select event type</option>
+                                <option>Corporate Meeting</option>
+                                <option>Conference</option>
+                                <option>Wedding</option>
+                                <option>Birthday Party</option>
+                                <option>Anniversary</option>
+                                <option>Other</option>
+                            </select>
+                            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                                <div class="w-5 h-5 flex items-center justify-center">
+                                    <i class="ri-arrow-down-s-line text-stone-400"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Expected Guests</label>
+                        <input type="number"
+                            class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Number of guests">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Event Date</label>
+                        <input type="date"
+                            class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Contact Number</label>
+                        <input type="tel"
+                            class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Your phone number">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold text-stone-700 mb-2">Event Details</label>
+                        <textarea rows="4"
+                            class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                            placeholder="Tell us more about your event requirements..."></textarea>
+                    </div>
+                    <div class="md:col-span-2 text-center">
+                        <button type="submit"
+                            class="bg-secondary text-primary px-8 py-3 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                            Submit Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- E-Brochure Section -->
+    <section id="brochure" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    E-Brochure
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Download our comprehensive digital brochures to explore our properties, amenities, and services in
+                    detail.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-stone-50 rounded-2xl p-6 text-center">
+                    <div class="w-24 h-32 bg-primary rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <i class="ri-file-pdf-line ri-2x text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">Resort Collection</h3>
+                    <p class="text-stone-600 mb-4">Complete guide to all our luxury resorts and their unique offerings.
+                    </p>
+                    <button
+                        class="bg-secondary text-primary px-6 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                        Download PDF
+                    </button>
+                </div>
+                <div class="bg-stone-50 rounded-2xl p-6 text-center">
+                    <div class="w-24 h-32 bg-primary rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <i class="ri-file-pdf-line ri-2x text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">Wedding Venues</h3>
+                    <p class="text-stone-600 mb-4">Discover our romantic wedding venues and celebration packages.</p>
+                    <button
+                        class="bg-secondary text-primary px-6 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                        Download PDF
+                    </button>
+                </div>
+                <div class="bg-stone-50 rounded-2xl p-6 text-center">
+                    <div class="w-24 h-32 bg-primary rounded-lg mx-auto mb-4 flex items-center justify-center">
+                        <div class="w-12 h-12 flex items-center justify-center">
+                            <i class="ri-file-pdf-line ri-2x text-white"></i>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-semibold text-stone-800 mb-2">Corporate Events</h3>
+                    <p class="text-stone-600 mb-4">Explore our meeting facilities and corporate event services.</p>
+                    <button
+                        class="bg-secondary text-primary px-6 py-2 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                        Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    Contact Us
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    Get in touch with our team for reservations, inquiries, or any assistance you need.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <div class="space-y-8">
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0">
+                                <i class="ri-phone-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-stone-800 mb-2">Phone</h3>
+                                <p class="text-stone-600">+91 484 2345678</p>
+                                <p class="text-stone-600">+91 484 2345679</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0">
+                                <i class="ri-mail-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-stone-800 mb-2">Email</h3>
+                                <p class="text-stone-600">reservations@deshadan.com</p>
+                                <p class="text-stone-600">info@deshadan.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0">
+                                <i class="ri-map-pin-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-stone-800 mb-2">Head Office</h3>
+                                <p class="text-stone-600">
+                                    Deshadan Resorts & Hotels<br>
+                                    Marine Drive, Ernakulam<br>
+                                    Kochi, Kerala 682031<br>
+                                    India
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div
+                                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full flex-shrink-0">
+                                <i class="ri-time-line ri-lg"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-stone-800 mb-2">Office Hours</h3>
+                                <p class="text-stone-600">Monday - Sunday: 24/7</p>
+                                <p class="text-stone-600">Emergency Support Available</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-stone-800 mb-6">Send us a Message</h3>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-stone-700 mb-2">First Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                    placeholder="Your first name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-stone-700 mb-2">Last Name</label>
+                                <input type="text"
+                                    class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                    placeholder="Your last name">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Email</label>
+                            <input type="email"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="your.email@example.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Subject</label>
+                            <input type="text"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="What is this regarding?">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-stone-700 mb-2">Message</label>
+                            <textarea rows="5"
+                                class="w-full px-4 py-3 border border-stone-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm"
+                                placeholder="Your message here..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-secondary text-primary px-8 py-3 !rounded-button font-semibold hover:bg-yellow-500 transition-colors duration-300 whitespace-nowrap">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- About Us Section -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">
+                    About Deshadan
+                </h2>
+                <p class="text-xl text-stone-600 max-w-3xl mx-auto">
+                    A legacy of hospitality excellence spanning over two decades, rooted in authentic South Indian
+                    culture and modern luxury.
+                </p>
+            </div>
+            <div class="space-y-20">
+                <!-- Our Story -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-3xl font-['Playfair_Display'] font-bold text-stone-800 mb-6">Our Story</h3>
+                        <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                            Founded in 1998, Deshadan Resorts & Hotels began as a vision to showcase the authentic
+                            beauty and culture of South India through exceptional hospitality. What started as a single
+                            property has grown into a collection of premium resorts and heritage hotels across Kerala,
+                            Tamil Nadu, and Karnataka.
+                        </p>
+                        <p class="text-lg text-stone-600 mb-6 leading-relaxed">
+                            Our name "Deshadan" reflects our commitment to being guardians of our land and culture,
+                            preserving traditions while embracing modern luxury. Each property in our portfolio tells a
+                            unique story of its destination, offering guests an immersive experience that goes beyond
+                            accommodation.
+                        </p>
+                        <p class="text-lg text-stone-600 leading-relaxed">
+                            Today, we are proud to be recognized as one of South India's leading hospitality groups,
+                            known for our authentic experiences, sustainable practices, and unwavering commitment to
+                            guest satisfaction.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://readdy.ai/api/search-image?query=elegant%20resort%20founder%20portrait%20with%20traditional%20South%20Indian%20architecture%20background%2C%20professional%20hospitality%20leadership%2C%20cultural%20heritage%2C%20warm%20welcoming%20atmosphere%2C%20premium%20hospitality%20industry%2C%20authentic%20Indian%20luxury&width=600&height=400&seq=about-story&orientation=landscape"
+                            alt="Our Story" class="w-full h-96 object-cover rounded-2xl shadow-2xl">
+                    </div>
+                </div>
+                <!-- Mission & Vision -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-stone-50 rounded-2xl p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-2xl mb-6">
+                            <i class="ri-eye-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-stone-800 mb-4">Our Vision</h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            To be South India's most respected hospitality brand, creating unforgettable experiences
+                            that celebrate local culture, preserve natural heritage, and set new standards for
+                            sustainable luxury tourism.
+                        </p>
+                    </div>
+                    <div class="bg-stone-50 rounded-2xl p-8">
+                        <div class="w-16 h-16 flex items-center justify-center bg-primary text-white rounded-2xl mb-6">
+                            <i class="ri-heart-line ri-2x"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-stone-800 mb-4">Our Mission</h3>
+                        <p class="text-stone-600 leading-relaxed">
+                            To provide authentic, luxury experiences that connect guests with the soul of South India
+                            while supporting local communities and preserving the environment for future generations.
+                        </p>
+                    </div>
+                </div>
+                <!-- Values -->
+                <div>
+                    <h3 class="text-3xl font-['Playfair_Display'] font-bold text-stone-800 mb-12 text-center">Our Values
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-star-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-stone-800 mb-2">Excellence</h4>
+                            <p class="text-stone-600">Commitment to the highest standards in service and hospitality.
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-leaf-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-stone-800 mb-2">Sustainability</h4>
+                            <p class="text-stone-600">Responsible tourism that protects our natural and cultural
+                                heritage.</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-community-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-stone-800 mb-2">Community</h4>
+                            <p class="text-stone-600">Supporting local communities and preserving traditional crafts.
+                            </p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-20 h-20 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-shield-check-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-xl font-semibold text-stone-800 mb-2">Authenticity</h4>
+                            <p class="text-stone-600">Genuine experiences that showcase the true spirit of South India.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Awards -->
+                <div class="bg-stone-50 rounded-2xl p-12">
+                    <h3 class="text-3xl font-['Playfair_Display'] font-bold text-stone-800 mb-12 text-center">Awards &
+                        Recognition</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-trophy-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-stone-800 mb-2">Best Resort Chain 2023</h4>
+                            <p class="text-stone-600">Kerala Tourism Awards</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-award-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-stone-800 mb-2">Sustainable Tourism Award</h4>
+                            <p class="text-stone-600">India Tourism Board 2022</p>
+                        </div>
+                        <div class="text-center">
+                            <div
+                                class="w-16 h-16 flex items-center justify-center bg-secondary text-primary rounded-full mx-auto mb-4">
+                                <i class="ri-medal-line ri-2x"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-stone-800 mb-2">Excellence in Heritage</h4>
+                            <p class="text-stone-600">Tamil Nadu Heritage Society</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div>
+                    <!-- <h3 class="text-2xl font-['Pacifico'] mb-6">Deshadan</h3> -->
+                    <img src="./assets/logo-white.png">
+                    <p class="text-stone-200 mt-6 leading-relaxed">
+                        Experience authentic South Indian hospitality at our collection of luxury resorts and heritage
+                        hotels.
+                    </p>
+                    <div class="flex space-x-4 mt-6">
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-secondary text-primary rounded-full hover:bg-yellow-500 transition-colors duration-300 cursor-pointer">
+                            <i class="ri-facebook-fill"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-secondary text-primary rounded-full hover:bg-yellow-500 transition-colors duration-300 cursor-pointer">
+                            <i class="ri-instagram-fill"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-secondary text-primary rounded-full hover:bg-yellow-500 transition-colors duration-300 cursor-pointer">
+                            <i class="ri-twitter-fill"></i>
+                        </div>
+                        <div
+                            class="w-10 h-10 flex items-center justify-center bg-secondary text-primary rounded-full hover:bg-yellow-500 transition-colors duration-300 cursor-pointer">
+                            <i class="ri-youtube-fill"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home"
+                                class="text-stone-200 hover:text-secondary transition-colors duration-300">Home</a></li>
+                        <li><a href="#hotels"
+                                class="text-stone-200 hover:text-secondary transition-colors duration-300">Hotels &
+                                Resorts</a></li>
+                        <li><a href="#events"
+                                class="text-stone-200 hover:text-secondary transition-colors duration-300">Meetings &
+                                Events</a></li>
+                        <li><a href="#brochure"
+                                class="text-stone-200 hover:text-secondary transition-colors duration-300">E-Brochure</a>
+                        </li>
+                        <li><a href="#about"
+                                class="text-stone-200 hover:text-secondary transition-colors duration-300">About Us</a>
+                        </li>
+                        <li><a href="#contact"
+                                class="text-stone-200 hover:text-secondary transition-colors duration-300">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Our Properties</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="text-stone-200">Deshadan Backwater Resort, Muhamma</li>
+                        <li class="text-stone-200">Deshadan Ecovalley Resort, Kanthalloor</li>
+                        <li class="text-stone-200">Deshadan Cliff & Beach Resort, Varkala</li>
+                        <li class="text-stone-200">Deshadan Mountain Resort, Munnar</li>
+                        <li class="text-stone-200">Chettinadu Mansion, Kanadukathan</li>
+                        <li class="text-stone-200">Deshadan's Tarangi Beach Villas, Mararikulam</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-6">Newsletter</h4>
+                    <p class="text-stone-200 mb-4">Subscribe to receive updates on special offers and new properties.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Your email"
+                            class="flex-1 px-4 py-2 rounded-l-lg border-none focus:ring-2 focus:ring-secondary text-stone-800 text-sm">
+                        <button
+                            class="bg-secondary text-primary px-4 py-2 rounded-r-lg hover:bg-yellow-500 transition-colors duration-300">
+                            <div class="w-5 h-5 flex items-center justify-center">
+                                <i class="ri-send-plane-line"></i>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-red-800 mt-12 pt-8 text-center">
+                <p class="text-stone-200">&copy; 2024 Deshadan Resorts & Hotels. All rights reserved. | Privacy Policy |
+                    Terms & Conditions</p>
+            </div>
+        </div>
+    </footer>
+    <script id="navigation-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const navbar = document.getElementById('navbar');
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            window.addEventListener('scroll', function () {
+                const logoImg = navbar.querySelector('img');
+                const navTitle = navbar.querySelector('h1');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('bg-white', 'shadow-lg');
+                    navbar.classList.remove('bg-transparent');
+                    navbar.querySelectorAll('a').forEach(link => {
+                        link.classList.remove('text-white');
+                        link.classList.add('text-stone-800');
+                    });
+                    if (navTitle) {
+                        navTitle.classList.remove('text-white');
+                        navTitle.classList.add('text-primary');
+                    }
+                    if (logoImg) logoImg.src = './assets/logo.png'; // <-- colored logo
+                } else {
+                    navbar.classList.remove('bg-white', 'shadow-lg');
+                    navbar.classList.add('bg-transparent');
+                    navbar.querySelectorAll('a').forEach(link => {
+                        link.classList.remove('text-stone-800');
+                        link.classList.add('text-white');
+                    });
+                    if (navTitle) {
+                        navTitle.classList.remove('text-primary');
+                        navTitle.classList.add('text-white');
+                    }
+                    if (logoImg) logoImg.src = './assets/logo-white.png'; // <-- white logo
+                }
+            });
+            mobileMenuBtn.addEventListener('click', function () {
+                mobileMenu.classList.toggle('hidden');
+            });
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+        });
+    </script>
+    <script id="booking-form-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const bookingForm = document.querySelector('#booking form');
+            const bookNowButtons = document.querySelectorAll('button:contains("Book Now")');
+            bookNowButtons.forEach(button => {
+                if (button.textContent.includes('Book Now')) {
+                    button.addEventListener('click', function () {
+                        document.getElementById('booking').scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    });
+                }
+            });
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Thank you for your booking request! We will contact you shortly to confirm your reservation.');
+                });
+            }
+        });
+    </script>
+    <script id="contact-form-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const contactForm = document.querySelector('#contact form');
+            const eventForm = document.querySelector('#events form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will get back to you within 24 hours.');
+                });
+            }
+            if (eventForm) {
+                eventForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    alert('Thank you for your event inquiry! Our events team will contact you soon.');
+                });
+            }
+        });
+    </script>
+    <script id="newsletter-script">
+        document.addEventListener('DOMContentLoaded', function () {
+            const newsletterForm = document.querySelector('footer .flex');
+            const newsletterButton = newsletterForm?.querySelector('button');
+            if (newsletterButton) {
+                newsletterButton.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const email = newsletterForm.querySelector('input[type="email"]').value;
+                    if (email) {
+                        alert('Thank you for subscribing to our newsletter!');
+                        newsletterForm.querySelector('input[type="email"]').value = '';
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        !function (t, e) { var o, n, p, r; e.__SV || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty createPersonProfile opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing clear_opt_in_out_capturing debug".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
+        posthog.init('phc_t9tkQZJiyi2ps9zUYm8TDsL6qXo4YmZx0Ot5rBlAlEd', {
+            api_host: 'https://us.i.posthog.com',
+            autocapture: false,
+            capture_pageview: false,
+            capture_pageleave: false,
+            capture_performance: {
+                web_vitals: false,
+            },
+            rageclick: false,
+        })
+        window.shareKey = 'grVAa7oZmAMZlECS0j-Tqw';
+        window.host = 'readdy.ai';
+    </script>
+    <!-- <script src="https://static.readdy.ai/static/share.js"></script> -->
+</body>
+
+</html>
